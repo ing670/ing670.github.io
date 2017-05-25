@@ -94,7 +94,7 @@
 <meta property="og:url" content="http://www.ing70.com/2017/05/25/lazy-man/index.html">
 <meta property="og:site_name" content="Each note leads to a new level.">
 <meta property="og:description" content="这是一套比较常见的js面试题，题目如下：  实现一个LazyMan，可以按照以下方式调用:LazyMan(“Hank”)输出:Hi! This is Hank! LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 10Eat dinner~ LazyMan(“Hank”).eat(“din">
-<meta property="og:updated_time" content="2017-05-25T04:38:38.000Z">
+<meta property="og:updated_time" content="2017-05-25T04:41:31.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="lazy man 面试题">
 <meta name="twitter:description" content="这是一套比较常见的js面试题，题目如下：  实现一个LazyMan，可以按照以下方式调用:LazyMan(“Hank”)输出:Hi! This is Hank! LazyMan(“Hank”).sleep(10).eat(“dinner”)输出Hi! This is Hank!//等待10秒..Wake up after 10Eat dinner~ LazyMan(“Hank”).eat(“din">
@@ -339,13 +339,13 @@
 <p>LazyMan(“Hank”).eat(“dinner”).eat(“supper”)输出<br>Hi This is Hank!<br>Eat dinner~<br>Eat supper~</p>
 <p>LazyMan(“Hank”).sleepFirst(5).eat(“supper”)输出<br>//等待5秒<br>Wake up after 5<br>Hi This is Hank!<br>Eat supper</p>
 <p>以此类推。  </p>
+</blockquote>
 <h3 id="题目分析"><a href="#题目分析" class="headerlink" title="题目分析"></a>题目分析</h3><ul>
 <li>根据函数调用行为可以看出，要实现一个能链式调用的函数</li>
 <li>LazyMan(“Hank”).sleep(10).eat(“dinner”)  eat方法需要放在sleep的回调里</li>
 <li>LazyMan(“Hank”).eat(“dinner”).eat(“supper”) 正常调用</li>
 <li>LazyMan(“Hank”).sleepFirst(5).eat(“supper”) 所有方法得放在sleepFirst 的回调里  </li>
 </ul>
-</blockquote>
 <p>第一次看到这个题目，按照普通的思维去看，得到的信息如上，毫无规律可循。<br>事实上，他们更像一种异步任务的行为，每调用一个方法可以先用一个队列存起来，然后依次把队列里面的任务执行了，<br>但是同时需要考虑异步的情况</p>
 <h3 id="相关知识点"><a href="#相关知识点" class="headerlink" title="相关知识点"></a>相关知识点</h3><ol>
 <li>链式调用</li>
