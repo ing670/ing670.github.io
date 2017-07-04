@@ -89,6 +89,8 @@ npm install
 hexo server
 ```
 此时，在浏览器输入http://localhost:4000 就能看到效果了
+如果发生没反应的情况，使用`hexo s -p 9999`换个端口试一试
+
 ### 新建一篇文章
 有两种方式：
 - 在`source/_posts` 新建一个以md结尾的文件，把hello-world.md格式拷贝过来就行
