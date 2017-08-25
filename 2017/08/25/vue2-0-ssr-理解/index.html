@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Each note leads to a new level.">
 <meta property="og:description" content="服务端渲染早些年，前端还没有工程化的时候，大部分web页面都是服务端渲染的，然后配合js完成交互。举个例子，以前我们写的jsp页面，它其实会被编译成一个Servlet，Servlet是利用输出流动态生成HTML页面，包括每一个HTML标签和每个在HTML页面中出现的内容。jsp并不是浏览器可以直接识别的html内容。而jsp到浏览器能识别的html的过程就是服务端渲染。 为什么现代框架重谈ssr(">
 <meta property="og:image" content="http://www.ing70.com/images/vuessr.png">
-<meta property="og:updated_time" content="2017-08-25T10:44:04.843Z">
+<meta property="og:updated_time" content="2017-08-25T10:46:55.788Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue2.0 ssr 理解 ">
 <meta name="twitter:description" content="服务端渲染早些年，前端还没有工程化的时候，大部分web页面都是服务端渲染的，然后配合js完成交互。举个例子，以前我们写的jsp页面，它其实会被编译成一个Servlet，Servlet是利用输出流动态生成HTML页面，包括每一个HTML标签和每个在HTML页面中出现的内容。jsp并不是浏览器可以直接识别的html内容。而jsp到浏览器能识别的html的过程就是服务端渲染。 为什么现代框架重谈ssr(">
@@ -355,7 +355,7 @@
 <li>如果没命中缓存，调用<code>renderer.renderToString</code><br><code>renderer</code>这个对象的实例化<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">readyPromise = <span class="built_in">require</span>(<span class="string">'./build/setup-dev-server'</span>)(app, (bundle, options) =&gt; &#123;</div><div class="line">    renderer = createRenderer(bundle, options)</div><div class="line">  &#125;)</div></pre></td></tr></table></figure>
 </li>
 </ol>
-<p>看到一个<code>./build/setup-dev-server</code><br>看到这个里面的代码，熟悉webpack的童鞋应该就是知道了，这里是初始化webpack<br>但是我们发现有两个compile</p>
+<h4 id="readyPromise"><a href="#readyPromise" class="headerlink" title="readyPromise"></a>readyPromise</h4><p>看到一个<code>./build/setup-dev-server</code><br>看到这个里面的代码，熟悉webpack的童鞋应该就是知道了，这里是初始化webpack<br>但是我们发现有两个compile</p>
 <ol>
 <li><code>clientCompiler</code></li>
 <li><code>serverCompiler</code><br>再看到ready函数调用的地方<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> ready = <span class="function">(<span class="params">...args</span>) =&gt;</span> &#123;</div><div class="line">   resolve()</div><div class="line">   cb(...args)</div><div class="line"> &#125;</div></pre></td></tr></table></figure>
@@ -556,7 +556,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端渲染"><span class="nav-number">1.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么现代框架重谈ssr-服务端渲染"><span class="nav-number">2.</span> <span class="nav-text">为什么现代框架重谈ssr(服务端渲染)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何理解vue-ssr"><span class="nav-number">3.</span> <span class="nav-text">如何理解vue ssr</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#render"><span class="nav-number">3.1.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#entry-client-js"><span class="nav-number">3.2.</span> <span class="nav-text">entry-client.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#entry-server-js"><span class="nav-number">3.3.</span> <span class="nav-text">entry-server.js</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#服务端渲染"><span class="nav-number">1.</span> <span class="nav-text">服务端渲染</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#为什么现代框架重谈ssr-服务端渲染"><span class="nav-number">2.</span> <span class="nav-text">为什么现代框架重谈ssr(服务端渲染)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何理解vue-ssr"><span class="nav-number">3.</span> <span class="nav-text">如何理解vue ssr</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#render"><span class="nav-number">3.1.</span> <span class="nav-text">render</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#readyPromise"><span class="nav-number">3.2.</span> <span class="nav-text">readyPromise</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#entry-client-js"><span class="nav-number">3.3.</span> <span class="nav-text">entry-client.js</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#entry-server-js"><span class="nav-number">3.4.</span> <span class="nav-text">entry-server.js</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#总结"><span class="nav-number">4.</span> <span class="nav-text">总结</span></a></li></ol></div>
             
 
           </div>
