@@ -95,7 +95,7 @@
 <meta property="og:site_name" content="Each note leads to a new level.">
 <meta property="og:description" content="服务端渲染早些年，前端还没有工程化的时候，大部分web页面都是服务端渲染的，然后配合js完成交互。举个例子，以前我们写的jsp页面，它其实会被编译成一个Servlet，Servlet是利用输出流动态生成HTML页面，包括每一个HTML标签和每个在HTML页面中出现的内容。jsp并不是浏览器可以直接识别的html内容。而jsp到浏览器能识别的html的过程就是服务端渲染。 为什么现代框架重谈ssr(">
 <meta property="og:image" content="http://www.ing70.com/images/vuessr.png">
-<meta property="og:updated_time" content="2017-08-25T10:41:18.421Z">
+<meta property="og:updated_time" content="2017-08-25T10:44:04.843Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vue2.0 ssr 理解 ">
 <meta name="twitter:description" content="服务端渲染早些年，前端还没有工程化的时候，大部分web页面都是服务端渲染的，然后配合js完成交互。举个例子，以前我们写的jsp页面，它其实会被编译成一个Servlet，Servlet是利用输出流动态生成HTML页面，包括每一个HTML标签和每个在HTML页面中出现的内容。jsp并不是浏览器可以直接识别的html内容。而jsp到浏览器能识别的html的过程就是服务端渲染。 为什么现代框架重谈ssr(">
@@ -337,7 +337,9 @@
 <ol>
 <li>seo问题–部分搜索引擎并不能收录js渲染出来的内容</li>
 <li>首页加载的问题–随着项目的复杂度越来越大，js越来越大。首屏加载时间越来越长</li>
-<li>如果浏览器禁用了js直接白屏问题<br>为了解决以上的问题，现代框架重新推出服务端渲染，如react ssr; vue ssr; angular ssr;<h3 id="如何理解vue-ssr"><a href="#如何理解vue-ssr" class="headerlink" title="如何理解vue ssr"></a>如何理解vue ssr</h3></li>
+<li>如果浏览器禁用了js直接白屏问题<br>为了解决以上的问题，现代框架重新推出服务端渲染，如react ssr; vue ssr; angular ssr;</li>
+</ol>
+<h3 id="如何理解vue-ssr"><a href="#如何理解vue-ssr" class="headerlink" title="如何理解vue ssr"></a>如何理解vue ssr</h3><ol>
 <li><a href="https://ssr.vuejs.org/" target="_blank" rel="external">官方文档</a></li>
 <li><a href="https://github.com/vuejs/vue-hackernews-2.0/" target="_blank" rel="external">官方demo</a><br>其实最快的方式就是弄懂官方的代码，我们先看一下官方工程的结构;<br><img src="/images/vuessr.png" alt="示例图"><br>我们从<code>npm run dev</code>开始顺藤摸瓜开始vue ssr探索之旅;</li>
 <li>npm run dev(node server.js)</li>
