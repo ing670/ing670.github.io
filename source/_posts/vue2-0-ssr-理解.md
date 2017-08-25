@@ -18,6 +18,7 @@ jsp并不是浏览器可以直接识别的html内容。而jsp到浏览器能识�
 2. 首页加载的问题--随着项目的复杂度越来越大，js越来越大。首屏加载时间越来越长
 3. 如果浏览器禁用了js直接白屏问题
 为了解决以上的问题，现代框架重新推出服务端渲染，如react ssr; vue ssr; angular ssr;
+
 ### 如何理解vue ssr
 1. [官方文档](https://ssr.vuejs.org/)
 2. [官方demo](https://github.com/vuejs/vue-hackernews-2.0/)
@@ -45,6 +46,7 @@ readyPromise = require('./build/setup-dev-server')(app, (bundle, options) => {
     renderer = createRenderer(bundle, options)
   })
 ```
+#### readyPromise
 看到一个`./build/setup-dev-server`
 看到这个里面的代码，熟悉webpack的童鞋应该就是知道了，这里是初始化webpack
 但是我们发现有两个compile
