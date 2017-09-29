@@ -71,7 +71,7 @@
 <link href="/css/main.css?v=5.1.0" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="随想," />
+  <meta name="keywords" content="js,es7," />
 
 
 
@@ -87,17 +87,17 @@
 
 
 
-<meta name="description" content="如果你想好一件事情，那现在就开始做吧。并且要一步一个脚印去做。这样的成长才是真实的，而不是虚胖。作为一个程序猿，技术是根本。这个小站将记录一个程序猿在工作中遇到的一些问题，解决问题的方法，一些前沿技术的原理。以后文章将按照以下几个维度来写.  问题原因分析  问题的关键点  解决问题的步骤  总结     希望我的小站在记录自己的成长的同时也能帮助到别人">
-<meta name="keywords" content="随想">
+<meta name="description" content="async await简单记录 1.async和await分别是generator*与yield的替换，但是async函数执行的时候和普通函数执行一样，而generator需要一个函数执行器 2.async返回的是一个promise 3.await 异步的情况下，await返回的结果是promise 返回的值举个例子 123456async function foo()&amp;#123;    let">
+<meta name="keywords" content="js,es7">
 <meta property="og:type" content="article">
-<meta property="og:title" content="千里之行，始于足下">
-<meta property="og:url" content="http://www.ing70.com/2017/05/23/hello-world/index.html">
+<meta property="og:title" content="async与await">
+<meta property="og:url" content="http://www.ing70.com/2017/09/29/async与await/index.html">
 <meta property="og:site_name" content="Each note leads to a new level.">
-<meta property="og:description" content="如果你想好一件事情，那现在就开始做吧。并且要一步一个脚印去做。这样的成长才是真实的，而不是虚胖。作为一个程序猿，技术是根本。这个小站将记录一个程序猿在工作中遇到的一些问题，解决问题的方法，一些前沿技术的原理。以后文章将按照以下几个维度来写.  问题原因分析  问题的关键点  解决问题的步骤  总结     希望我的小站在记录自己的成长的同时也能帮助到别人">
-<meta property="og:updated_time" content="2017-07-04T02:22:28.342Z">
+<meta property="og:description" content="async await简单记录 1.async和await分别是generator*与yield的替换，但是async函数执行的时候和普通函数执行一样，而generator需要一个函数执行器 2.async返回的是一个promise 3.await 异步的情况下，await返回的结果是promise 返回的值举个例子 123456async function foo()&amp;#123;    let">
+<meta property="og:updated_time" content="2017-09-29T07:31:41.616Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="千里之行，始于足下">
-<meta name="twitter:description" content="如果你想好一件事情，那现在就开始做吧。并且要一步一个脚印去做。这样的成长才是真实的，而不是虚胖。作为一个程序猿，技术是根本。这个小站将记录一个程序猿在工作中遇到的一些问题，解决问题的方法，一些前沿技术的原理。以后文章将按照以下几个维度来写.  问题原因分析  问题的关键点  解决问题的步骤  总结     希望我的小站在记录自己的成长的同时也能帮助到别人">
+<meta name="twitter:title" content="async与await">
+<meta name="twitter:description" content="async await简单记录 1.async和await分别是generator*与yield的替换，但是async函数执行的时候和普通函数执行一样，而generator需要一个函数执行器 2.async返回的是一个promise 3.await 异步的情况下，await返回的结果是promise 返回的值举个例子 123456async function foo()&amp;#123;    let">
 
 
 
@@ -125,13 +125,13 @@
 
 
 
-  <link rel="canonical" href="http://www.ing70.com/2017/05/23/hello-world/"/>
+  <link rel="canonical" href="http://www.ing70.com/2017/09/29/async与await/"/>
 
 
 
 
 
-  <title> 千里之行，始于足下 | Each note leads to a new level. </title>
+  <title> async与await | Each note leads to a new level. </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -258,7 +258,7 @@
   
 
   <article class="post post-type-normal " itemscope itemtype="http://schema.org/Article">
-    <link itemprop="mainEntityOfPage" href="http://www.ing70.com/2017/05/23/hello-world/">
+    <link itemprop="mainEntityOfPage" href="http://www.ing70.com/2017/09/29/async与await/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="ing70">
@@ -279,7 +279,7 @@
             
             
               
-                千里之行，始于足下
+                async与await
               
             
           </h1>
@@ -294,8 +294,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-05-23T17:21:50+08:00">
-                2017-05-23
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2017-09-29T13:55:03+08:00">
+                2017-09-29
               </time>
             
 
@@ -304,28 +304,6 @@
             
           </span>
 
-          
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/life/" itemprop="url" rel="index">
-                    <span itemprop="name">life</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
           
 
           
@@ -352,18 +330,22 @@
       
 
       
-        <p>如果你想好一件事情，那现在就开始做吧。并且要一步一个脚印去做。这样的成长才是真实的，而不是虚胖。<br>作为一个程序猿，技术是根本。这个小站将记录一个程序猿在工作中遇到的一些问题，解决问题的方法，一些前沿技术的原理。<br>以后文章将按照以下几个维度来写.</p>
-<ol>
-<li><p>问题原因分析</p>
+        <h4 id="async-await简单记录"><a href="#async-await简单记录" class="headerlink" title="async await简单记录"></a>async await简单记录</h4><ul>
+<li>1.<code>async</code>和<code>await</code>分别是generator<code>*</code>与<code>yield</code>的替换，但是<code>async</code>函数执行的时候和普通函数执行一样，而generator需要一个函数执行器</li>
+<li>2.<code>async</code>返回的是一个promise</li>
+<li><p>3.<code>await</code> 异步的情况下，<code>await</code>返回的结果是promise 返回的值举个例子</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>)</span>&#123;</div><div class="line">    <span class="keyword">let</span> bar = <span class="keyword">await</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span>=&gt;</span>&#123;</div><div class="line">        setTimeout(<span class="function"><span class="params">()</span>=&gt;</span>resolve(<span class="string">'666'</span>),<span class="number">1000</span>)</div><div class="line">    &#125;)</div><div class="line">    <span class="built_in">console</span>.log(bar)</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 </li>
-<li><p>问题的关键点</p>
+<li><p>4.<code>async</code>函数内部return语句返回的值，会成为then方法回调函数的参数。</p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">func</span>(<span class="params"></span>) </span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="string">'666'</span>;</div><div class="line">&#125;</div><div class="line"></div><div class="line">func().then(<span class="function"><span class="params">v</span> =&gt;</span> <span class="built_in">console</span>.log(v))</div></pre></td></tr></table></figure>
 </li>
-<li><p>解决问题的步骤</p>
+<li><p>5.<code>await</code>命令后面的Promise对象，运行结果可能是rejected，最好把<code>await</code>命令放在try…catch代码块中。</p>
 </li>
-<li><p>总结  </p>
+<li><p>6.<code>await</code>命令只能用在<code>async</code>函数之中，如果用在普通函数，就会报错。</p>
 </li>
-</ol>
-<p>希望我的小站在记录自己的成长的同时也能帮助到别人</p>
+<li><p><a href="http://es6.ruanyifeng.com/#docs/async" target="_blank" rel="external">详细信息</a></p>
+</li>
+</ul>
 
       
     </div>
@@ -393,7 +375,9 @@
       
         <div class="post-tags">
           
-            <a href="/tags/随想/" rel="tag"># 随想</a>
+            <a href="/tags/js/" rel="tag"># js</a>
+          
+            <a href="/tags/es7/" rel="tag"># es7</a>
           
         </div>
       
@@ -406,15 +390,15 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
+              <a href="/2017/08/25/vue2-0-ssr-理解/" rel="next" title="vue2.0 ssr 理解 ">
+                <i class="fa fa-chevron-left"></i> vue2.0 ssr 理解 
+              </a>
+            
           </div>
 
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2017/05/24/how-to-uese-hexo/" rel="prev" title="如何使用hexo搭建自己的博客">
-                如何使用hexo搭建自己的博客 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -461,8 +445,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap" >
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview sidebar-panel sidebar-panel-active">
+      <section class="site-overview sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
           <img class="site-author-image" itemprop="image"
                src="/images/avatar.jpg"
@@ -524,6 +517,22 @@
 
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#async-await简单记录"><span class="nav-number">1.</span> <span class="nav-text">async await简单记录</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
